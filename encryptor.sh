@@ -1,7 +1,8 @@
 #!/bin/bash
 
 print_usage() {
-    echo "encryptor -f <input filename> -o <output filename."
+    #echo "encryptor -i <input filename> -o <output filename>"
+    echo "encryptor -i <input filename>"
     echo "    h - print this help message"
     echo "    i - input filename"
     # TODO support output file name
