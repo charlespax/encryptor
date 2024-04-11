@@ -3,17 +3,17 @@
 print_usage() {
     #echo "encryptor -i <input filename> -o <output filename>"
     echo "encryptor -i <input filename>"
-    echo "    h - print this help message"
-    echo "    i - input filename"
+    echo "  -i   input filename"
+    echo "  -h   PRINT This help message"
+    echo "  -q   PRINT qr code if qrencode is installed"
     # TODO support output file name
-    #echo "    o - output filename"
-    echo "    q - print qr code if qrencode is installed"
+    #echo "  -o   output filename"
 }
 
 encrypt() {
     # TODO Spilt this into two functions:
     #  1. generate encrypted string
-    #  2. Create the output file
+    #  2. create the output file
     GPG_FILE="$IN_FILE.gpg"
     OUT_FILE="$IN_FILE.out.sh"
 
@@ -38,6 +38,7 @@ while getopts 'hi:q' flag; do
     h) print_usage
        exit 1 ;;
     i) IN_FILE="${OPTARG}" ;;
+#    o) OUT_FILE="${OPTARG}" ;;
     q) q_flag='true' ;;
     *) print_usage
        exit 1 ;;
